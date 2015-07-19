@@ -40,7 +40,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.ding.GalaxyTradingPlatform.Platform</mainClass>
+							<mainClass>com.ding.GalaxyTradingPlatform.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

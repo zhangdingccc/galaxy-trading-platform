@@ -12,15 +12,15 @@ import org.junit.Test;
 /**
  * Unit test for Trader class.
  */
-public class TraderTest {
+public class MerchantSolverTest {
 	
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	private Trader trader;
+	private MerchantSolver trader;
 	
 	@Before
 	public void setUp() {
 		System.setOut(new PrintStream(outContent));
-		trader = new Trader();
+		trader = new MerchantSolver();
 		
 	}
 	
@@ -31,7 +31,7 @@ public class TraderTest {
 	}
 
 	@Test
-	public void tradeShouldMatchSampleOutputWhenSampleInputIsGiven() {
+	public void tradeShouldMatchSampleOutputWhenSampleInputIsGiven() throws InvalidInputException {
 		trader.trade("glob is I");
 		trader.trade("prok is V");
 		trader.trade("pish is X");
