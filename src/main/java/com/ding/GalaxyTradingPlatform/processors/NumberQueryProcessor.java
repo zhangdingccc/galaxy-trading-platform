@@ -5,6 +5,10 @@ import com.ding.GalaxyTradingPlatform.utils.GalaxyNumber;
 import com.ding.GalaxyTradingPlatform.utils.RomanNumeral;
 import com.ding.GalaxyTradingPlatform.utils.Utils;
 
+/*
+ * The NumberQueryProcessor class handles user's query on galaxy number converting to decimal
+ */
+
 class NumberQueryProcessor extends Processor {
 
 	NumberQueryProcessor(String[] inputTokens) {
@@ -19,7 +23,7 @@ class NumberQueryProcessor extends Processor {
 	private void answerGalaxyNumberToDecimalQuery() throws InvalidInputException {
 		int inputTokensCount = inputTokens.length;
 		
-		// ignore invalid input
+		// invalid query
 		if (inputTokensCount < 5 || !inputTokens[inputTokensCount-1].equals("?")) {
 			System.out.println("I have no idea what you are talking about");
 			return;
@@ -33,7 +37,7 @@ class NumberQueryProcessor extends Processor {
 			romanBuilder.append(GalaxyNumber.getRomanUnit(inputTokens[index]));
 		}
 		
-		// ignore invalid input line
+		// invalid query
 		if (index == 0 || index < inputTokensCount-1) {
 			System.out.println("I have no idea what you are talking about");
 			return;

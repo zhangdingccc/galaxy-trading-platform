@@ -3,6 +3,10 @@ package com.ding.GalaxyTradingPlatform.processors;
 import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
 import com.ding.GalaxyTradingPlatform.utils.GalaxyNumber;
 
+/*
+ * The NumberUpdateProcessor class handles user's input on updating galaxy number system
+ */
+
 class NumberUpdateProcessor extends Processor {
 
 	NumberUpdateProcessor(String[] inputTokens) throws InvalidInputException {

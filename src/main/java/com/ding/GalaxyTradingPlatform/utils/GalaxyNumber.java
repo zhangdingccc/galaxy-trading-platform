@@ -3,6 +3,11 @@ package com.ding.GalaxyTradingPlatform.utils;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * The GalaxyNumber class maintains the mapping between galaxy number and roman unit
+ * and provides basic utils method on galaxy number
+ */
+
 public class GalaxyNumber {
 	
 	private static Map<String, Character> galaxyNumberToRomanUnitMapping = new HashMap<String, Character>();

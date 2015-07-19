@@ -6,6 +6,10 @@ import com.ding.GalaxyTradingPlatform.utils.GalaxyUnit;
 import com.ding.GalaxyTradingPlatform.utils.RomanNumeral;
 import com.ding.GalaxyTradingPlatform.utils.Utils;
 
+/*
+ * The UnitQueryProcessor class handles user's query on galaxy unit credits
+ */
+
 class UnitQueryProcessor extends Processor {
 	
 	UnitQueryProcessor(String[] inputTokens) {

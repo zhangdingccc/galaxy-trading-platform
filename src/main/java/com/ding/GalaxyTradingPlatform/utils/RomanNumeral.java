@@ -9,6 +9,11 @@ import java.util.Set;
 
 import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
 
+/*
+ * The RomanNumeral class maintains the mapping between roman unit and decimal
+ * and provides basic utils method on roman numeral
+ */
+
 @SuppressWarnings("serial")
 public final class RomanNumeral {
 	

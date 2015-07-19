@@ -8,6 +8,10 @@ import com.ding.GalaxyTradingPlatform.utils.GalaxyUnit;
 import com.ding.GalaxyTradingPlatform.utils.RomanNumeral;
 import com.ding.GalaxyTradingPlatform.utils.Utils;
 
+/*
+ * The UnitUpdateProcessor class handles user's input on updating galaxy unit credits
+ */
+
 class UnitUpdateProcessor extends Processor {
 
 	UnitUpdateProcessor(String[] inputTokens) {

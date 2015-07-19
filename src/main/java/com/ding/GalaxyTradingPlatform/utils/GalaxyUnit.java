@@ -3,6 +3,11 @@ package com.ding.GalaxyTradingPlatform.utils;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * The GalaxyUnit class maintains the mapping between galaxy units and their credit
+ * and provides basic utils method on galaxy units
+ */
+
 public class GalaxyUnit {
 	
 	private static Map<String, Double> galaxyUnitToCreditMapping = new HashMap<String, Double>();
