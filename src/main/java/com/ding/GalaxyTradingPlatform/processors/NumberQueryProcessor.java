@@ -1,4 +1,9 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.processors;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
+import com.ding.GalaxyTradingPlatform.utils.GalaxyNumber;
+import com.ding.GalaxyTradingPlatform.utils.RomanNumeral;
+import com.ding.GalaxyTradingPlatform.utils.Utils;
 
 class NumberQueryProcessor extends Processor {
 
@@ -7,7 +12,7 @@ class NumberQueryProcessor extends Processor {
 	}
 
 	@Override
-	void process() throws InvalidInputException {
+	public void process() throws InvalidInputException {
 		answerGalaxyNumberToDecimalQuery();
 	}
 	

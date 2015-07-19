@@ -1,4 +1,10 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.processors;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
+import com.ding.GalaxyTradingPlatform.utils.GalaxyNumber;
+import com.ding.GalaxyTradingPlatform.utils.GalaxyUnit;
+import com.ding.GalaxyTradingPlatform.utils.RomanNumeral;
+import com.ding.GalaxyTradingPlatform.utils.Utils;
 
 class UnitQueryProcessor extends Processor {
 	
@@ -7,7 +13,7 @@ class UnitQueryProcessor extends Processor {
 	}
 
 	@Override
-	void process() throws InvalidInputException {
+	public void process() throws InvalidInputException {
 		answerGalaxyUnitsCreditQuery();
 	}
 	

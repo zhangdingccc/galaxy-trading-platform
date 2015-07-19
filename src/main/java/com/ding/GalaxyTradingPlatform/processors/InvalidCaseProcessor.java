@@ -1,4 +1,6 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.processors;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
 
 class InvalidCaseProcessor extends Processor {
 	
@@ -7,7 +9,7 @@ class InvalidCaseProcessor extends Processor {
 	}
 	
 	@Override
-	void process() throws InvalidInputException {
+	public void process() throws InvalidInputException {
 		int inputTokensCount = inputTokens.length;
 		if (inputTokens[inputTokensCount-1].endsWith("?")) {
 			System.out.println("I have no idea what you are talking about");

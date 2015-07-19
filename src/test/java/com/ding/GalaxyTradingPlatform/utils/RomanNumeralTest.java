@@ -1,7 +1,10 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.utils;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
+import com.ding.GalaxyTradingPlatform.utils.RomanNumeral;
 
 public class RomanNumeralTest {
 

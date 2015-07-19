@@ -1,6 +1,12 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.processors;
 
 import java.util.Arrays;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
+import com.ding.GalaxyTradingPlatform.utils.GalaxyNumber;
+import com.ding.GalaxyTradingPlatform.utils.GalaxyUnit;
+import com.ding.GalaxyTradingPlatform.utils.RomanNumeral;
+import com.ding.GalaxyTradingPlatform.utils.Utils;
 
 class UnitUpdateProcessor extends Processor {
 
@@ -9,7 +15,7 @@ class UnitUpdateProcessor extends Processor {
 	}
 
 	@Override
-	void process() throws NumberFormatException, InvalidInputException {
+	public void process() throws NumberFormatException, InvalidInputException {
 		updateGalaxyUnits();
 	}
 	

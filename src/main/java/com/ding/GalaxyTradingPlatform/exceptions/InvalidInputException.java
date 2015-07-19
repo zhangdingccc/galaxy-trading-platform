@@ -1,4 +1,4 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.exceptions;
 
 @SuppressWarnings("serial")
 public class InvalidInputException extends Exception {

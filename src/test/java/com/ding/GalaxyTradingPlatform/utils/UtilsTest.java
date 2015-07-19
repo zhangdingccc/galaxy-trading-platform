@@ -1,7 +1,9 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.utils;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+
+import com.ding.GalaxyTradingPlatform.utils.Utils;
 
 
 /**

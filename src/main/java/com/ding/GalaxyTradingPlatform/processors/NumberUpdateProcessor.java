@@ -1,4 +1,7 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.processors;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
+import com.ding.GalaxyTradingPlatform.utils.GalaxyNumber;
 
 class NumberUpdateProcessor extends Processor {
 
@@ -7,7 +10,7 @@ class NumberUpdateProcessor extends Processor {
 	}
 
 	@Override
-	void process() {
+	public void process() {
 		updateGalaxyNumber();
 	}
 	

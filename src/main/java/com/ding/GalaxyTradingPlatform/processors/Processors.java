@@ -1,4 +1,6 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.processors;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
 
 public final class Processors {
 	private Processors() {}

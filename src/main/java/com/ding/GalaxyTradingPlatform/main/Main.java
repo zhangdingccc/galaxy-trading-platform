@@ -1,9 +1,11 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.main;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
+import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
 
 /*
  *  Main : Entry point to Solver

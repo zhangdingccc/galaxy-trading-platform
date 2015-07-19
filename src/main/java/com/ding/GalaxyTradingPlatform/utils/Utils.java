@@ -1,12 +1,12 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.utils;
 
-class Utils {
+public class Utils {
 
-	static boolean isNonNegativeNumeric(String str) {
+	public static boolean isNonNegativeNumeric(String str) {
 		return str.matches("\\d+(\\.\\d+)?");
 	}
 
-	static String join(String[] arr, String delim, int start, int end) {
+	public static String join(String[] arr, String delim, int start, int end) {
 		StringBuilder sb = new StringBuilder();
 		String loopDelim = "";
 
@@ -20,7 +20,7 @@ class Utils {
 		return sb.toString();
 	}
 
-	static String formatNumeric(double d) {
+	public static String formatNumeric(double d) {
 		if (d == (long)d)
 			return String.format("%d", (long)d);
 		else

@@ -1,21 +1,21 @@
-package com.ding.GalaxyTradingPlatform;
+package com.ding.GalaxyTradingPlatform.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class GalaxyUnit {
+public class GalaxyUnit {
 	
 	private static Map<String, Double> galaxyUnitToCreditMapping = new HashMap<String, Double>();
 	
-	static Double getCredits(String name) {
+	public static Double getCredits(String name) {
 		return galaxyUnitToCreditMapping.get(name);
 	}
 	
-	static boolean isValidGalaxyUnit(String name) {
+	public static boolean isValidGalaxyUnit(String name) {
 		return galaxyUnitToCreditMapping.containsKey(name);
 	} 
 	
-	static void updateGalaxyUnit(String name, Double credits) {
+	public static void updateGalaxyUnit(String name, Double credits) {
 		if (credits > 0) galaxyUnitToCreditMapping.put(name, credits);
 	}
 	
