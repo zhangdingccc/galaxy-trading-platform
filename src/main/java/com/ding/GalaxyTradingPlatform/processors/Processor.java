@@ -14,6 +14,6 @@ public abstract class Processor {
 		this.inputTokens = inputTokens;
 	}
 	
-	public void process() throws InvalidInputException {}
+	public void handleEvent() throws InvalidInputException {}
 	
 }

@@ -17,7 +17,7 @@ class UnitQueryProcessor extends Processor {
 	}
 
 	@Override
-	public void process() throws InvalidInputException {
+	public void handleEvent() throws InvalidInputException {
 		answerGalaxyUnitsCreditQuery();
 	}
 	
@@ -26,8 +26,7 @@ class UnitQueryProcessor extends Processor {
 		
 		// ignore invalid input line
 		if (inputTokensCount < 7 || !inputTokens[inputTokensCount-1].equals("?")) {
-			System.out.println("I have no idea what you are talking about");
-			return;
+			throw new InvalidInputException("I have no idea what you are talking about");
 		}
 		
 		// get roman
@@ -40,8 +39,7 @@ class UnitQueryProcessor extends Processor {
 		
 		// ignore invalid input line
 		if (index == 0 || index == inputTokensCount-1) {
-			System.out.println("I have no idea what you are talking about");
-			return;
+			throw new InvalidInputException("I have no idea what you are talking about");
 		}
 		
 		// get unit name
@@ -49,8 +47,7 @@ class UnitQueryProcessor extends Processor {
 		
 		// ignore invalid input
 		if (!GalaxyUnit.isValidGalaxyUnit(unitName)) {
-			System.out.println("I have no idea what you are talking about");
-			return;
+			throw new InvalidInputException("I have no idea what you are talking about");
 		}
 		
 		// calculate unit credit

@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
-import com.ding.GalaxyTradingPlatform.processors.Processors;
+import com.ding.GalaxyTradingPlatform.processors.ProcessorFactory;
 
 /*
  *  The MerchantSolver class provides the entry point to the trading platform
@@ -17,28 +17,32 @@ public class MerchantSolver {
 	
 	public static void main(String[] args) throws IOException {
 		if (args.length == 0) {
-			System.out.println("Please specify the input file path!");
+			System.err.println("Please specify the input file path!");
 			return;
 		}
 		
+		BufferedReader br = null;
 		String filePath = args[0];
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(filePath));
-			MerchantSolver trader = new MerchantSolver();
+			br = new BufferedReader(new FileReader(filePath));
+			MerchantSolver solver = new MerchantSolver();
 			String query = null;
 			while ((query = br.readLine()) != null) {
-				trader.trade(query);
+				try {
+					solver.processQuery(query);
+				} catch (InvalidInputException e) {
+					System.out.println(e.getMessage());
+				}
 			}
-			br.close();
 		} catch(FileNotFoundException e) {
-			System.out.println("Input file cannot be found!");
-		} catch (InvalidInputException e) {
-			System.err.println(e.getMessage());
-		}		
+			System.err.println("Input file cannot be found!");
+		} finally {
+			br.close();
+		}
 	}
 	
-	void trade(String inputLine) throws InvalidInputException {		
-		Processors.getProcessor(inputLine).process();
+	void processQuery(String query) throws InvalidInputException {		
+		ProcessorFactory.createProcessor(query).handleEvent();
 	}
 	
 }

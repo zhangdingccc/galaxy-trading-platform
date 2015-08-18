@@ -16,7 +16,7 @@ class NumberQueryProcessor extends Processor {
 	}
 
 	@Override
-	public void process() throws InvalidInputException {
+	public void handleEvent() throws InvalidInputException {
 		answerGalaxyNumberToDecimalQuery();
 	}
 	
@@ -25,8 +25,7 @@ class NumberQueryProcessor extends Processor {
 		
 		// invalid query
 		if (inputTokensCount < 5 || !inputTokens[inputTokensCount-1].equals("?")) {
-			System.out.println("I have no idea what you are talking about");
-			return;
+			throw new InvalidInputException("I have no idea what you are talking about");
 		}
 		
 		// get roman
@@ -39,8 +38,7 @@ class NumberQueryProcessor extends Processor {
 		
 		// invalid query
 		if (index == 0 || index < inputTokensCount-1) {
-			System.out.println("I have no idea what you are talking about");
-			return;
+			throw new InvalidInputException("I have no idea what you are talking about");
 		}
 		
 		// calculate roman number to decimal

@@ -14,7 +14,7 @@ class NumberUpdateProcessor extends Processor {
 	}
 
 	@Override
-	public void process() {
+	public void handleEvent() {
 		updateGalaxyNumber();
 	}
 	

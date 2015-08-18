@@ -19,7 +19,7 @@ class UnitUpdateProcessor extends Processor {
 	}
 
 	@Override
-	public void process() throws NumberFormatException, InvalidInputException {
+	public void handleEvent() throws NumberFormatException, InvalidInputException {
 		updateGalaxyUnits();
 	}
 	

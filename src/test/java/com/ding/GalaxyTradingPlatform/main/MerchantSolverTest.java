@@ -33,27 +33,27 @@ public class MerchantSolverTest {
 		solver = null;
 	}
 
-	@Test
+	@Test(expected = InvalidInputException.class)
 	public void tradeShouldMatchSampleOutputWhenSampleInputIsGiven() throws InvalidInputException {
-		solver.trade("glob is I");
-		solver.trade("prok is V");
-		solver.trade("pish is X");
-		solver.trade("tegj is L");
-		solver.trade("glob glob Silver is 34 Credits");
-		solver.trade("glob prok Gold is 57800 Credits");
-		solver.trade("pish pish Iron is 3910 Credits");
-		solver.trade("how much is pish tegj glob glob ?");
-		solver.trade("how many Credits is glob prok Silver ?");
-		solver.trade("how many Credits is glob prok Gold ?");
-		solver.trade("how many Credits is glob prok Iron ?");
-		solver.trade("how much wood could a woodchuck chuck if a woodchuck could chuck wood ?");
+		solver.processQuery("glob is I");
+		solver.processQuery("prok is V");
+		solver.processQuery("pish is X");
+		solver.processQuery("tegj is L");
+		solver.processQuery("glob glob Silver is 34 Credits");
+		solver.processQuery("glob prok Gold is 57800 Credits");
+		solver.processQuery("pish pish Iron is 3910 Credits");
+		solver.processQuery("how much is pish tegj glob glob ?");
+		solver.processQuery("how many Credits is glob prok Silver ?");
+		solver.processQuery("how many Credits is glob prok Gold ?");
+		solver.processQuery("how many Credits is glob prok Iron ?");
+		solver.processQuery("how much wood could a woodchuck chuck if a woodchuck could chuck wood ?");
 		
 		StringBuilder expectedBuilder = new StringBuilder();
 		expectedBuilder.append("pish tegj glob glob is 42\n");
 		expectedBuilder.append("glob prok Silver is 68 Credits\n");
 		expectedBuilder.append("glob prok Gold is 57800 Credits\n");
 		expectedBuilder.append("glob prok Iron is 782 Credits\n");
-		expectedBuilder.append("I have no idea what you are talking about\n");
+		//expectedBuilder.append("I have no idea what you are talking about\n");
 		
 		assertEquals(expectedBuilder.toString(), outContent.toString());
 	}
