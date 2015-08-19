@@ -8,10 +8,10 @@ import com.ding.GalaxyTradingPlatform.exceptions.InvalidInputException;
 
 public abstract class Processor {
 	
-	String[] inputTokens;
+	String[] tokens;
 	
-	Processor(String[] inputTokens) {
-		this.inputTokens = inputTokens;
+	Processor(String[] tokens) {
+		this.tokens = tokens;
 	}
 	
 	public void handleEvent() throws InvalidInputException {}

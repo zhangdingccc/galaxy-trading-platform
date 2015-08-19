@@ -9,8 +9,8 @@ import com.ding.GalaxyTradingPlatform.utils.GalaxyNumber;
 
 class NumberUpdateProcessor extends Processor {
 
-	NumberUpdateProcessor(String[] inputTokens) throws InvalidInputException {
-		super(inputTokens);
+	NumberUpdateProcessor(String[] tokens) throws InvalidInputException {
+		super(tokens);
 	}
 
 	@Override
@@ -19,8 +19,8 @@ class NumberUpdateProcessor extends Processor {
 	}
 	
 	private void updateGalaxyNumber() {
-		String galaxyNumber = inputTokens[0];
-		Character romanUnit = inputTokens[2].charAt(0);
+		String galaxyNumber = tokens[0];
+		Character romanUnit = tokens[2].charAt(0);
 		GalaxyNumber.updateGalaxyNumber(galaxyNumber, romanUnit);
 	}
 

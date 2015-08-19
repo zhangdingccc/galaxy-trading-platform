@@ -12,8 +12,8 @@ import com.ding.GalaxyTradingPlatform.utils.Utils;
 
 class UnitQueryProcessor extends Processor {
 	
-	UnitQueryProcessor(String[] inputTokens) {
-		super(inputTokens);
+	UnitQueryProcessor(String[] tokens) {
+		super(tokens);
 	}
 
 	@Override
@@ -22,28 +22,28 @@ class UnitQueryProcessor extends Processor {
 	}
 	
 	private void answerGalaxyUnitsCreditQuery() throws InvalidInputException {
-		int inputTokensCount = inputTokens.length;
+		int tokensCount = tokens.length;
 		
 		// ignore invalid input line
-		if (inputTokensCount < 7 || !inputTokens[inputTokensCount-1].equals("?")) {
+		if (tokensCount < 7 || !tokens[tokensCount-1].equals("?")) {
 			throw new InvalidInputException("I have no idea what you are talking about");
 		}
 		
 		// get roman
 		StringBuilder romanBuilder = new StringBuilder();
 		int index = 4;
-		for (; index < inputTokensCount-1; index++) {
-			if (!GalaxyNumber.isValidGalaxyNumber(inputTokens[index])) break;
-			romanBuilder.append(GalaxyNumber.getRomanUnit(inputTokens[index]));
+		for (; index < tokensCount-1; index++) {
+			if (!GalaxyNumber.isValidGalaxyNumber(tokens[index])) break;
+			romanBuilder.append(GalaxyNumber.getRomanUnit(tokens[index]));
 		}
 		
 		// ignore invalid input line
-		if (index == 0 || index == inputTokensCount-1) {
+		if (index == 0 || index == tokensCount-1) {
 			throw new InvalidInputException("I have no idea what you are talking about");
 		}
 		
 		// get unit name
-		String unitName = Utils.join(inputTokens, " ", index, inputTokensCount - 1);
+		String unitName = Utils.join(tokens, " ", index, tokensCount - 1);
 		
 		// ignore invalid input
 		if (!GalaxyUnit.isValidGalaxyUnit(unitName)) {
@@ -55,7 +55,7 @@ class UnitQueryProcessor extends Processor {
 		double unitCredit = GalaxyUnit.getCredits(unitName);
 		double totalCredit = unitCredit * unitCount;
 		
-		printResult(Utils.join(inputTokens, " ", 0, inputTokensCount), totalCredit);
+		printResult(Utils.join(tokens, " ", 0, tokensCount), totalCredit);
 	}
 	
 	private void printResult(String query, double result) {

@@ -14,8 +14,8 @@ import com.ding.GalaxyTradingPlatform.utils.Utils;
 
 class UnitUpdateProcessor extends Processor {
 
-	UnitUpdateProcessor(String[] inputTokens) {
-		super(inputTokens);
+	UnitUpdateProcessor(String[] tokens) {
+		super(tokens);
 	}
 
 	@Override
@@ -24,9 +24,9 @@ class UnitUpdateProcessor extends Processor {
 	}
 	
 	private void updateGalaxyUnits() throws NumberFormatException, InvalidInputException {
-		int inputTokensCount = inputTokens.length;
-		String[] arr = Arrays.copyOfRange(inputTokens, 0, inputTokensCount - 3);
-		String credits = inputTokens[inputTokensCount-2];
+		int tokensCount = tokens.length;
+		String[] arr = Arrays.copyOfRange(tokens, 0, tokensCount - 3);
+		String credits = tokens[tokensCount-2];
 		
 		// ignore invalid input line, eg: "glob Gold is X Credits"
 		if (!Utils.isNonNegativeNumeric(credits)) return;
